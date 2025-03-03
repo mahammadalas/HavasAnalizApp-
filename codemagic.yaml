@@ -1,3 +1,4 @@
+echo "workflows:
   ios-build:
     name: iOS Build
     instance_type: mac_mini
