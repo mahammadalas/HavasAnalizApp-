@@ -1,7 +1,7 @@
 workflows:
   ios-build:
     name: iOS Build
-    instance_type: mac_standard
+    instance_type: mac_mini_m1
     environment:
       xcode: latest
     scripts:
