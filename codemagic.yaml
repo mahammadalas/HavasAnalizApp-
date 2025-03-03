@@ -1,4 +1,4 @@
-echo "workflows:
+workflows:
   ios-build:
     name: iOS Build
     instance_type: mac_mini
@@ -6,6 +6,11 @@ echo "workflows:
       xcode: latest
     scripts:
       - name: Build iOS app
-        script: xcodebuild -workspace HavasAnalizApp.xcworkspace -scheme HavasAnalizApp -sdk iphoneos -configuration Release build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+        script: |
+          xcodebuild -workspace HavasAnalizApp.xcworkspace \
+            -scheme HavasAnalizApp \
+            -sdk iphoneos \
+            -configuration Release \
+            build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
     artifacts:
       - build/ios/**/*.ipa
