@@ -1,0 +1,10 @@
+  ios-build:
+    name: iOS Build
+    instance_type: mac_mini
+    environment:
+      xcode: latest
+    scripts:
+      - name: Build iOS app
+        script: xcodebuild -workspace HavasAnalizApp.xcworkspace -scheme HavasAnalizApp -sdk iphoneos -configuration Release build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+    artifacts:
+      - build/ios/**/*.ipa
